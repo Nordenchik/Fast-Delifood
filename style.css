@@ -1,4 +1,9 @@
 #navbar-settings {
-    background-color: linear-gradient(180deg, #8926BF 0%, #B153D7 100%);
+    background: linear-gradient(180deg, #8926BF 0%, #B153D7 100%);
+}
+
+.navbar-nav {
+    color: white;
     display: flex;
+    align-items: center;
 }
