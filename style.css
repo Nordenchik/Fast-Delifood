@@ -1,0 +1,26 @@
+#navbar-settings {
+    background: linear-gradient(90deg, #8926BF 0%, #B153D7 100%) !important;
+    padding: 10px 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.custom-link {
+    color: #ffffff !important;
+    font-weight: 500;
+    margin-right: 15px;
+    transition: all 0.3s ease;
+}
+
+.custom-link:hover {
+    color: #f1f1f1 !important;
+    opacity: 0.8;
+    transform: translateY(-1px);
+}
+
+.navbar-toggler {
+    border-color: rgba(255,255,255,0.5);
+}
+
+.navbar-toggler-icon {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
