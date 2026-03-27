@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'KronaOne-Regular';
-    src: url('fonts/KronaOne-Regular.ttf') format('ttf');
+    src: url('fonts/KronaOne-Regular.ttf') format('truetype');
     font-style: normal;
 }
 
 #fastdeli-font {
-    font-family: 'KronaOne-Regular', normal;
+    font-family: 'KronaOne-Regular', sans-serif;
 }
 
 #navbar-settings {
