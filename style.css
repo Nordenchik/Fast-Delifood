@@ -15,8 +15,43 @@
 }
 
 #btn-1 {
-    background: linear-gradient(180deg, rgba(243, 117, 194, 1) 0%, rgba(177, 83, 215, 1) 100%);
+    background-image: linear-gradient(180deg, rgba(243, 117, 194, 1) 0%, rgba(177, 83, 215, 1) 100%);
     border: none;
+    border-radius: 10px;
+    height: 70px;
+    font-size: 25px;
+    text-align: center;
+    padding-bottom: 10px;
+    transition: all 0.25s ease !important;
+}
+
+#btn-1:hover {
+    background-image: linear-gradient(180deg, rgba(177, 83, 215, 1) 0%, rgba(243, 117, 194, 1) 100%) !important;
+    transform: scale(1.1);
+}
+
+#btn-1:active {
+    transform: scale(1.05);
+}
+
+#btn-2 {
+    background-image: linear-gradient(180deg, rgba(91, 58, 201, 1) 0%, rgba(19, 32, 120, 1) 100%);
+    border: none;
+    border-radius: 10px;
+    height: 70px;
+    font-size: 25px;
+    text-align: center;
+    padding-bottom: 10px;
+    transition: all 0.25s ease;
+}
+
+#btn-2:hover {
+    background-image: linear-gradient(180deg, rgba(19, 32, 120, 1) 0%, rgba(91, 58, 201, 1) 100%) !important;
+    transform: scale(1.1);
+}
+
+#btn-2:active {
+    transform: scale(1.05);
 }
 
 .custom-link {
@@ -38,6 +73,33 @@
 
 .navbar-toggler-icon {
     filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+.navbar-basket {
+    transition: all 2s ease;
+    z-index: 2;
+}
+
+.navbar-basket:hover {
+    background-image: url('images/hovered_basket.png');
+    z-index: 2;
+}
+
+.navbar-basket::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 65px;
+    height: 65px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    z-index: 1;
+    opacity: 0;
+}
+
+.navbar-basket:hover::before {
+    opacity: 1;
 }
 
 #banner {
