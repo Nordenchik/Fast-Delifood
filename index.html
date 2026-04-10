@@ -1,143 +1,95 @@
 <!DOCTYPE html>
 <html lang="uk">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fast Delifood</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-    <nav class="navbar navbar-expand-lg" id="navbar-settings">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="images/fd_logo.png" alt="Fast Delifood" width="50" height="50">
-            </a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav justify-content-center w-100">
-                    <a class="nav-link custom-link fs-4" href="#">Меню</a>
-                    <a class="nav-link custom-link fs-4" href="#">Зворотній звязок</a>
-                    <a class="nav-link custom-link fs-4" href="#">Новини</a>
-                    <a class="nav-link custom-link fs-4" href="#">Про нас</a>
-                </div>
-                <div class="navbar-basket" id="basket-container">
-                    <a class="basket-link" href="#"></a>
-                    <img id="basket-icon" src="images/basket.png" alt="Кошик">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fast Delifood</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg" id="navbar-settings">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="images/fd_logo.png" alt="Fast Delifood" width="50" height="50"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav justify-content-center w-100">
+                        <a class="nav-link custom-link fs-4" href="#">Меню</a>
+                        <a class="nav-link custom-link fs-4" href="#">Зворотній звязок</a>
+                        <a class="nav-link custom-link fs-4" href="#">Новини</a>
+                        <a class="nav-link custom-link fs-4" href="#">Про нас</a>
+                    </div>
+                    <div class="navbar-basket" id="basket-container">
+                        <a class="basket-link" href="#"></a>
+                        <img id="basket-icon" src="images/basket.png" alt="Кошик">
+                    </div>
                 </div>
             </div>
+        </nav>
+        <section id="banner" class="d-flex align-items-center justify-content-center">
+            <div class="container text-center text-white d-grid gap-5">
+                <h1 class="display-5"><span id="fastdeli-font">Fast Delifood</span> — коли хочеться швидко й смачно</h1>
+                <div class="d-grid gap-4 col-3 mx-auto">
+                    <button id="btn-1" type="button" class="btn btn-primary btn-lg">Замовити зараз</button>
+                    <button id="btn-2" type="button" class="btn btn-secondary btn-lg">Забронювати місця</button>
+                </div>
+            </div>
+        </section>
+        <div class="container" style="max-width: 900px;">
+            <h3 class="text-center fw-bold mb-4">Топові замовлення!</h3>
+            <div class="row g-3 row-cols-2 row-cols-md-4">
+                <div class="col">
+                    <div class="custom-card border-0 rounded-4 d-flex flex-column align-items-center justify-content-center text-center p-2">
+                        <div class="product-image-wrapper mb-2"><img src="images/топові замовлення/burger.png" class="img-fluid" alt="Бургери"></div>
+                        <span class="fs-6">Бургери</span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="custom-card border-0 rounded-4 d-flex flex-column align-items-center justify-content-center text-center p-2">
+                        <div class="product-image-wrapper mb-2"><img src="images/топові замовлення/snacks.png" class="img-fluid" alt="Снеки"></div>
+                        <span class="fs-6">Снеки</span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="custom-card border-0 rounded-4 d-flex flex-column align-items-center justify-content-center text-center p-2">
+                        <div class="product-image-wrapper mb-2"><img src="images/топові замовлення/drinks.png" class="img-fluid" alt="Напої"></div>
+                        <span class="fs-6">Напої</span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="custom-card border-0 rounded-4 d-flex flex-column align-items-center justify-content-center text-center p-2">
+                        <div class="product-image-wrapper mb-2"><img src="images/топові замовлення/fastfood.png" class="img-fluid" alt="Фастфуд"></div>
+                        <span class="fs-6">Фастфуд</span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="custom-card border-0 rounded-4 d-flex flex-column align-items-center justify-content-center text-center p-2">
+                        <div class="product-image-wrapper mb-2"><img src="images/топові замовлення/meat_food.png" class="img-fluid" alt="М'ясні вироби"></div>
+                        <span class="fs-6">М'ясні вироби</span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="custom-card border-0 rounded-4 d-flex flex-column align-items-center justify-content-center text-center p-2">
+                        <div class="product-image-wrapper mb-2"><img src="images/топові замовлення/georgian_food.png" class="img-fluid" alt="Грузинська кухня"></div>
+                        <span class="fs-6">Грузинська кухня</span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="custom-card border-0 rounded-4 d-flex flex-column align-items-center justify-content-center text-center p-2">
+                        <div class="product-image-wrapper mb-2"><img src="images/топові замовлення/cakes.png" class="img-fluid" alt="Торти"></div>
+                        <span class="fs-6">Торти</span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="custom-card border-0 rounded-4 d-flex flex-column align-items-center justify-content-center text-center p-2">
+                        <div class="product-image-wrapper mb-2"><img src="images/топові замовлення/desserts.png" class="img-fluid" alt="Десерти"></div>
+                        <span class="fs-6">Десерти</span>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4"><button class="btn btn-purple rounded-3 fw-medium">Замовити</button></div>
         </div>
-    </nav>
-    <section id="banner" class="d-flex align-items-center justify-content-center">
-        <div class="container text-center text-white d-grid gap-5">
-            <h1 class="display-5">
-                <span id="fastdeli-font">
-                    Fast Delifood
-                </span>
-                — коли хочеться швидко й смачно
-            </h1>
-            <div class="d-grid gap-4 col-3 mx-auto">
-                <button id="btn-1" type="button" class="btn btn-primary btn-lg">Замовити зараз</button>
-                <button id="btn-2" type="button" class="btn btn-secondary btn-lg">Забронювати місця</button>
-            </div>
-        </div>
-    </section>
-    
-
-    <div class="container" style="max-width: 900px;">
-        <h3 class="text-center fw-bold mb-4">Топові замовлення!</h3>
-
-        <div class="row g-3 row-cols-2 row-cols-md-4">
-            
-            <div class="col">
-                <div class="custom-card border-0 rounded-4 d-flex flex-column align-items-center justify-content-center text-center p-2">
-                    <div class="product-image-wrapper mb-2">
-                        <img src="images/топові замовлення/burger.png" class="img-fluid" alt="Бургери">
-                    </div>
-                    <span class="fs-6">Бургери</span>
-                </div>
-            </div>
-            
-            <div class="col">
-                <div class="custom-card border-0 rounded-4 d-flex flex-column align-items-center justify-content-center text-center p-2">
-                    <div class="product-image-wrapper mb-2">
-                        <img src="images/топові замовлення/snacks.png" class="img-fluid" alt="Снеки">
-                    </div>
-                    <span class="fs-6">Снеки</span>
-                </div>
-            </div>
-            
-            <div class="col">
-                <div class="custom-card border-0 rounded-4 d-flex flex-column align-items-center justify-content-center text-center p-2">
-                    <div class="product-image-wrapper mb-2">
-                        <img src="images/топові замовлення/drinks.png" class="img-fluid" alt="Напої">
-                    </div>
-                    <span class="fs-6">Напої</span>
-                </div>
-            </div>
-            
-            <div class="col">
-                <div class="custom-card border-0 rounded-4 d-flex flex-column align-items-center justify-content-center text-center p-2">
-                    <div class="product-image-wrapper mb-2">
-                        <img src="images/топові замовлення/fastfood.png" class="img-fluid" alt="Фастфуд">
-                    </div>
-                    <span class="fs-6">Фастфуд</span>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="custom-card border-0 rounded-4 d-flex flex-column align-items-center justify-content-center text-center p-2">
-                    <div class="product-image-wrapper mb-2">
-                        <img src="" class="img-fluid" alt="М'ясні вироби">
-                    </div>
-                    <span class="fs-6">М'ясні вироби</span>
-                </div>
-            </div>
-            
-            <div class="col">
-                <div class="custom-card border-0 rounded-4 d-flex flex-column align-items-center justify-content-center text-center p-2">
-                    <div class="product-image-wrapper mb-2">
-                        <img src="images/топові замовлення/georgian_food.png" class="img-fluid" alt="Грузинська кухня">
-                    </div>
-                    <span class="fs-6">Грузинська кухня</span>
-                </div>
-            </div>
-            
-            <div class="col">
-                <div class="custom-card border-0 rounded-4 d-flex flex-column align-items-center justify-content-center text-center p-2">
-                    <div class="product-image-wrapper mb-2">
-                        <img src="" class="img-fluid" alt="Торти">
-                    </div>
-                    <span class="fs-6">Торти</span>
-                </div>
-            </div>
-            
-            <div class="col">
-                <div class="custom-card border-0 rounded-4 d-flex flex-column align-items-center justify-content-center text-center p-2">
-                    <div class="product-image-wrapper mb-2">
-                        <img src="" class="img-fluid" alt="Морозиво">
-                    </div>
-                    <span class="fs-6">Морозиво</span>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="text-center mt-4">
-            <button class="btn btn-purple rounded-3 fw-medium">Замовити</button>
-        </div>
-    </div>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
-</body>
-
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="script.js"></script>
+    </body>
 </html>
