@@ -171,6 +171,14 @@ body {
 
 #contact {
     background-color: #222;
+    padding-top: 20px;
+    position: relative; 
+    overflow: hidden; 
+}
+
+#contact > *:not(#contact-maccup) {
+    position: relative;
+    z-index: 1;
 }
 
 #contact-title-h3 {
@@ -182,11 +190,29 @@ body {
     color: #B153D7;
     font-family: 'Asap', sans-serif !important;
     font-weight: 500;
-    font-size: 45px;
+    font-size: 40px;
     padding-left: 100px;
 }
 
 #contact-maccup {
-    margin-top: -60px;
-    margin-right: 35px;
+    position: absolute;
+    right: 5%; 
+    top: 50%; 
+    transform: translateY(-20%); 
+    z-index: 0; 
+    max-height: 90%;
+    object-fit: contain;
+}
+
+#contact-list {
+    color: #B153D7;
+    font-family: 'Asap', sans-serif !important;
+    font-weight: 500;
+    font-size: 20px;
+    padding-left: 100px;
+}
+
+#contact-list-li {
+    color: #F375C2;
+    margin-bottom: 15px;
 }
