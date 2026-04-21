@@ -14,7 +14,7 @@
 }
 
 #titleH1 {
-    background: linear-gradient(90deg, #00C2FF 0%,  #7F5FE9 70%);
+    background: linear-gradient(90deg, #00C2FF 0%, #7F5FE9 70%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -172,11 +172,11 @@ body {
 #contact {
     background-color: #222;
     padding-top: 20px;
-    position: relative; 
-    overflow: hidden; 
+    position: relative;
+    overflow: hidden;
 }
 
-#contact > *:not(#contact-maccup) {
+#contact>*:not(#contact-maccup) {
     position: relative;
     z-index: 1;
 }
@@ -196,10 +196,10 @@ body {
 
 #contact-maccup {
     position: absolute;
-    right: 5%; 
-    top: 50%; 
-    transform: translateY(-20%); 
-    z-index: 0; 
+    right: 5%;
+    top: 50%;
+    transform: translateY(-20%);
+    z-index: 0;
     max-height: 90%;
     object-fit: contain;
 }
