@@ -4,10 +4,10 @@ const basketContainer = document.getElementById('basket-container');
 
 if (basketContainer) {
     basketContainer.addEventListener('mouseenter', function() {
-        basketIcon.src = 'images/hovered_basket.png';
+        basketIcon.src = 'images/панель/hovered_basket.png';
     });
     
     basketContainer.addEventListener('mouseleave', function() {
-        basketIcon.src = 'images/basket.png';
+        basketIcon.src = 'images/панель/basket.png';
     });
 }
