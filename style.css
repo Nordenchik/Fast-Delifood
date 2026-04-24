@@ -269,10 +269,11 @@ body {
 
 #about-us {
     width: 100%;
-    height: 645px;
     background: url("images/про нас/about_us_background.png") no-repeat center center;
     background-size: cover;
     position: relative;
+    padding: 20px;
+    min-height: 400px;
 }
 
 .about-us-container {
@@ -286,6 +287,8 @@ body {
     font-weight: 500;
     font-family: 'Asap', sans-serif !important;
     padding-left: 100px !important;
+    font-size: 1.6rem; 
+    display: inline-block;
 }
 
 .about-us-more-info:hover {
@@ -298,10 +301,10 @@ body {
 }
 
 .timeline {
-    width: 1500px;
-    height: auto;
-    align-self: flex-end;
-    margin-top: -250px;
+    width: 1000px;
+    position: absolute;
+    right: 0;
+    transform: translateY(45%);
 }
 
 /* ===== СЕКЦІЯ ВІДГУКІВ ===== */
