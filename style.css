@@ -274,6 +274,13 @@ body {
     background-size: cover;
     position: relative;
 }
+
+.about-us-container {
+    color: #F375C2;
+    display: flex;
+    flex-direction: column;
+}
+
 .about-us-more-info {
     color: #F375C2;
     font-weight: 500;
@@ -283,4 +290,16 @@ body {
 
 .about-us-more-info:hover {
     color: #B153D7;
+}
+
+.timeline-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.timeline {
+    width: 1500px;
+    height: auto;
+    align-self: flex-end;
+    margin-top: -250px;
 }
