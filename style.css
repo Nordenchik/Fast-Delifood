@@ -194,6 +194,15 @@ body {
     padding-left: 100px;
 }
 
+.contact-more-info {
+    color: #F375C2;
+    font-weight: 500;
+}
+
+.contact-more-info:hover {
+    color: #B153D7;
+}
+
 #contact-maccup {
     position: absolute;
     right: 5%; 
