@@ -267,6 +267,43 @@ body {
     opacity: 0.8;
 }
 
+#about-us {
+    width: 100%;
+    height: 645px;
+    background: url("images/про нас/about_us_background.png") no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+
+.about-us-container {
+    color: #F375C2;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-us-more-info {
+    color: #F375C2;
+    font-weight: 500;
+    font-family: 'Asap', sans-serif !important;
+    padding-left: 100px !important;
+}
+
+.about-us-more-info:hover {
+    color: #B153D7;
+}
+
+.timeline-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.timeline {
+    width: 1500px;
+    height: auto;
+    align-self: flex-end;
+    margin-top: -250px;
+}
+
 /* ===== СЕКЦІЯ ВІДГУКІВ ===== */
 #reviews {
     background-color: #ffffff;
