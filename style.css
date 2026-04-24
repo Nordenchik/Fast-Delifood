@@ -197,6 +197,8 @@ body {
 .contact-more-info {
     color: #F375C2;
     font-weight: 500;
+    font-family: 'Asap', sans-serif !important;
+    padding-left: 100px !important
 }
 
 .contact-more-info:hover {
