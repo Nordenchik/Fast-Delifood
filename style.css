@@ -266,3 +266,307 @@ body {
     color: #8926BF;
     opacity: 0.8;
 }
+
+/* ===== СЕКЦІЯ ВІДГУКІВ ===== */
+#reviews {
+    background-color: #ffffff;
+    padding: 40px 0 20px;
+}
+
+.reviews-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.reviews-main-title {
+    font-size: 35px;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+}
+
+.review-form-card {
+    background: linear-gradient(180deg, #C0C0C0 0%, #FFFFFF 100%);
+    border-radius: 16px;
+    padding: 18px 18px 0;
+    border: 1px solid #b8b8b8;
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 20px 10px #00000040 inset;
+
+}
+
+.review-form-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.review-form-avatar {
+    width: 48px;
+    height: 48px;
+    background-color: #aaaaaa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.review-form-avatar svg {
+    width: 28px;
+    height: 28px;
+}
+
+.review-name-input {
+    flex: 1;
+    background-color:#D9D9D9;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    color: #444;
+    outline: none;
+    font-family: 'Asap', sans-serif;
+    transition: background-color 0.2s ease;
+    box-shadow: 0px 0px 10px 5px #00000040 inset;
+
+}
+
+.review-name-input::placeholder {
+    color: #888;
+}
+
+.review-name-input:focus {
+    background-color: #bababa;
+}
+
+.review-stars-input {
+    display: flex;
+    gap: 2px;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.star-input {
+    font-size: 2rem;
+    color: #e0e0e0;
+    cursor: pointer;
+    transition: color 0.15s ease, transform 0.1s ease;
+    line-height: 1;
+    user-select: none;
+}
+
+.star-input.hovered,
+.star-input.active {
+    color: #B153D7;
+    transform: scale(1.1);
+}
+
+.review-textarea {
+    width: 100%;
+    background-color: #D9D9D9;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 0.95rem;
+    color: #444;
+    resize: none;
+    outline: none;
+    font-family: 'Asap', sans-serif;
+    transition: background-color 0.2s ease;
+    box-shadow: 0px 0px 15px 7px #00000040 inset;
+
+}
+
+.review-textarea::placeholder {
+    color: #888;
+}
+
+.review-textarea:focus {
+    background-color: #c0c0c0;
+}
+
+.review-form-submit-wrapper {
+    background: linear-gradient(180deg, #C0C0C0 0%, #FFFFFF 100%);
+    box-shadow: 0px 0px 20px 10px #00000040 inset;
+    text-align: center;
+    padding: 16px 18px;
+    margin: 14px -18px 0;
+}
+
+.btn-submit-review {
+    background: linear-gradient(180deg, #5B3AC9 0%, #132078 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 55px;
+    font-size: 1.05rem;
+    font-family: 'Asap', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    letter-spacing: 0.3px;
+    display: block;
+    margin: 14px auto;
+}
+
+.btn-submit-review:hover {
+    background: linear-gradient(180deg, #5a3fb0 0%, #3a2590 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(107, 79, 200, 0.4);
+}
+
+.btn-submit-review:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: none;
+}
+
+.reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 4px;
+}
+
+.review-card {
+    background: #ffffff;
+    border: 1px solid #e4e4e4;
+    border-radius: 14px;
+    padding: 16px 18px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    animation: reviewFadeIn 0.35s ease;
+}
+
+@keyframes reviewFadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.review-card:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+.review-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.review-card-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+}
+
+.review-card-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.review-card-name {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #1a1a1a;
+    margin: 0 0 3px 0;
+}
+
+.review-card-stars {
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
+.review-card-stars .star-filled {
+    color: #B153D7;
+}
+
+.review-card-stars .star-empty {
+    color: #d0d0d0;
+}
+
+.review-card-menu {
+    color: #aaa;
+    cursor: pointer;
+    font-size: 1.4rem;
+    line-height: 1;
+    flex-shrink: 0;
+    padding: 2px 4px;
+    border-radius: 6px;
+    transition: background-color 0.15s ease, color 0.15s ease;
+    position: relative;
+}
+
+.review-card-menu:hover {
+    background-color: #f0f0f0;
+    color: #555;
+}
+
+.review-card-text {
+    margin: 10px 0 4px;
+    font-size: 0.9rem;
+    color: #333;
+    line-height: 1.65;
+    font-weight: 500;
+}
+
+.review-card-date {
+    font-size: 0.78rem;
+    color: #bbb;
+    margin: 0;
+}
+
+.reviews-more-link {
+    color: #6b4fc8;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.reviews-more-link:hover {
+    color: #4a35a0;
+    opacity: 0.85;
+}
+
+.review-delete-menu {
+    position: absolute;
+    top: 28px;
+    right: 0;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    z-index: 100;
+    min-width: 130px;
+    overflow: hidden;
+}
+
+.review-delete-menu button {
+    display: block;
+    width: 100%;
+    padding: 10px 16px;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 0.9rem;
+    color: #e74c3c;
+    cursor: pointer;
+    font-family: 'Asap', sans-serif;
+    transition: background-color 0.15s ease;
+}
+
+.review-delete-menu button:hover {
+    background-color: #fff5f5;
+}
