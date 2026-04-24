@@ -266,3 +266,21 @@ body {
     color: #8926BF;
     opacity: 0.8;
 }
+
+#about-us {
+    width: 100%;
+    height: 645px;
+    background: url("images/про нас/about_us_background.png") no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+.about-us-more-info {
+    color: #F375C2;
+    font-weight: 500;
+    font-family: 'Asap', sans-serif !important;
+    padding-left: 100px !important;
+}
+
+.about-us-more-info:hover {
+    color: #B153D7;
+}
