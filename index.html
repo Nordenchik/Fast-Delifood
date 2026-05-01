@@ -13,15 +13,20 @@
                 <a class="navbar-brand" href="#"><img src="images/панель/fd_logo.png" alt="FD" width="50" height="50"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav justify-content-center w-100">
+                    <div class="navbar-nav mx-auto">
                         <a class="nav-link custom-link fs-4" href="#">Меню</a>
                         <a class="nav-link custom-link fs-4" href="#">Зворотній звязок</a>
                         <a class="nav-link custom-link fs-4" href="#">Новини</a>
                         <a class="nav-link custom-link fs-4" href="#">Про нас</a>
                     </div>
-                    <div class="navbar-basket" id="basket-container">
-                        <a class="basket-link" href="#"></a>
-                        <img id="basket-icon" src="images/панель/basket.png" alt="Кошик">
+                    <div class="d-flex align-items-center gap-3 ms-lg-auto justify-content-center mt-3 mt-lg-0">
+                        <button id="theme-toggle" class="btn rounded-circle p-2 d-flex align-items-center justify-content-center" title="Змінити тему">
+                            <span id="theme-icon">🌙</span>
+                        </button>
+                        <div class="navbar-basket" id="basket-container">
+                            <a class="basket-link" href="#"></a>
+                            <img id="basket-icon" src="images/панель/basket.png" alt="Кошик">
+                        </div>
                     </div>
                 </div>
             </div>

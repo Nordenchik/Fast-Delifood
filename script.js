@@ -268,8 +268,37 @@ document.addEventListener('click', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
+    initTheme();
     initStarRating();
     initReviewSubmit();
     initLoadMore();
     renderReviews();
 });
+
+// ===== ТЕМНА ТЕМА =====
+function initTheme() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+
+    if (!themeToggle) return;
+
+    // Перевіряємо збережену тему
+    const currentTheme = localStorage.getItem('fastdelifood_theme');
+    if (currentTheme === 'dark') {
+        document.body.classList.add('dark-theme');
+        themeIcon.textContent = '☀️';
+    }
+
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-theme');
+        
+        // Зберігаємо вибір користувача та змінюємо іконку
+        if (document.body.classList.contains('dark-theme')) {
+            localStorage.setItem('fastdelifood_theme', 'dark');
+            themeIcon.textContent = '☀️';
+        } else {
+            localStorage.setItem('fastdelifood_theme', 'light');
+            themeIcon.textContent = '🌙';
+        }
+    });
+}
