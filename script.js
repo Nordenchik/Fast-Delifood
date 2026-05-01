@@ -286,19 +286,39 @@ function initTheme() {
     const currentTheme = localStorage.getItem('fastdelifood_theme');
     if (currentTheme === 'dark') {
         document.body.classList.add('dark-theme');
-        themeIcon.textContent = '☀️';
+        themeIcon.src = 'images/панель/dark_theme.png';
+    } else {
+        themeIcon.src = 'images/панель/light_theme.png';
     }
 
     themeToggle.addEventListener('click', () => {
         document.body.classList.toggle('dark-theme');
         
-        // Зберігаємо вибір користувача та змінюємо іконку
+        
         if (document.body.classList.contains('dark-theme')) {
             localStorage.setItem('fastdelifood_theme', 'dark');
-            themeIcon.textContent = '☀️';
+            themeIcon.src = 'images/панель/dark_theme_hovered.png';
         } else {
             localStorage.setItem('fastdelifood_theme', 'light');
-            themeIcon.textContent = '🌙';
+            themeIcon.src = 'images/панель/light_theme_hovered.png';
+        }
+    });
+
+    // Зміна іконки при наведенні
+    themeToggle.addEventListener('mouseenter', () => {
+        if (document.body.classList.contains('dark-theme')) {
+            themeIcon.src = 'images/панель/dark_theme_hovered.png';
+        } else {
+            themeIcon.src = 'images/панель/light_theme_hovered.png';
+        }
+    });
+
+    // Повернення іконки при відведенні курсора
+    themeToggle.addEventListener('mouseleave', () => {
+        if (document.body.classList.contains('dark-theme')) {
+            themeIcon.src = 'images/панель/dark_theme.png';
+        } else {
+            themeIcon.src = 'images/панель/light_theme.png';
         }
     });
 }
