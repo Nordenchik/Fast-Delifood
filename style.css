@@ -341,9 +341,7 @@ body {
     overflow: hidden;
     margin-bottom: 30px;
     box-shadow: 0px 0px 20px 10px #00000040 inset;
-
 }
-
 
 .review-form-header {
     display: flex;
@@ -380,7 +378,6 @@ body {
     font-family: 'Asap', sans-serif;
     transition: background-color 0.2s ease;
     box-shadow: 0px 0px 10px 5px #00000040 inset;
-
 }
 
 .review-name-input::placeholder {
@@ -426,7 +423,6 @@ body {
     font-family: 'Asap', sans-serif;
     transition: background-color 0.2s ease;
     box-shadow: 0px 0px 15px 7px #00000040 inset;
-
 }
 
 .review-textarea::placeholder {
