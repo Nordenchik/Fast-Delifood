@@ -116,6 +116,10 @@
 }
 
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #ffffff;
     font-family: 'Asap', sans-serif;
@@ -265,6 +269,10 @@ body {
 .news-link:hover {
     color: #8926BF;
     opacity: 0.8;
+}
+
+#whats-new {
+    scroll-margin-top: 100px;
 }
 
 #about-us {
@@ -615,6 +623,42 @@ body {
     transition: background-color 0.15s ease;
 }
 
+/* ===== ЗВОРОТНІЙ ЗВ'ЯЗОК ===== */
+#feedback {
+    background-color: #ffffff;
+    padding: 20px 0 60px;
+    scroll-margin-top: 100px;
+}
+
+.feedback-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.feedback-form-card {
+    background: linear-gradient(180deg, #C0C0C0 0%, #FFFFFF 100%);
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid #b8b8b8;
+    box-shadow: 0px 0px 20px 10px #00000040 inset;
+}
+
+.feedback-inputs {
+    display: flex;
+    gap: 15px;
+}
+
+.feedback-inputs > input {
+    flex: 1;
+}
+
+@media (max-width: 600px) {
+    .feedback-inputs {
+        flex-direction: column;
+    }
+}
+
 .review-delete-menu button:hover {
     background-color: #fff5f5;
 }
@@ -640,7 +684,8 @@ body.dark-theme .news-title {
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8), 0px 0px 20px rgba(0, 0, 0, 0.8);
 }
 
-body.dark-theme #reviews {
+body.dark-theme #reviews,
+body.dark-theme #feedback {
     background-color: #121212;
 }
 
@@ -648,7 +693,8 @@ body.dark-theme .reviews-main-title {
     color: #ffffff;
 }
 
-body.dark-theme .review-form-card {
+body.dark-theme .review-form-card,
+body.dark-theme .feedback-form-card {
     background: linear-gradient(180deg, #2a2a2a 0%, #1e1e1e 100%);
     border-color: #444;
     box-shadow: 0px 0px 20px 10px #00000080 inset;
@@ -718,12 +764,14 @@ body.dark-theme .review-delete-menu button:hover {
 
 #theme-icon {
     height: 32px;
-    width: auto;
+    width: 32px;
+    object-fit: contain;
 }
 
 #basket-icon {
     height: 36px;
-    width: auto;
+    width: 36px;
+    object-fit: contain;
 }
 
 #basement {

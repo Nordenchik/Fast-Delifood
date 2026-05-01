@@ -272,8 +272,61 @@ document.addEventListener('DOMContentLoaded', function() {
     initStarRating();
     initReviewSubmit();
     initLoadMore();
+    initFeedbackSubmit();
     renderReviews();
 });
+
+// ===== ЗВОРОТНІЙ ЗВ'ЯЗОК =====
+function initFeedbackSubmit() {
+    const btn = document.getElementById('submit-feedback-btn');
+    if (!btn) return;
+
+    btn.addEventListener('click', function() {
+        const nameEl = document.getElementById('feedback-name');
+        const emailEl = document.getElementById('feedback-email');
+        const textEl = document.getElementById('feedback-text');
+        const successMsg = document.getElementById('feedback-success');
+
+        const name = nameEl.value.trim();
+        const email = emailEl.value.trim();
+        const text = textEl.value.trim();
+
+        // Проста валідація
+        let isValid = true;
+
+        if (!name) {
+            nameEl.style.outline = '2px solid #e74c3c';
+            setTimeout(() => nameEl.style.outline = '', 1500);
+            isValid = false;
+        }
+
+        if (!email || !email.includes('@')) {
+            emailEl.style.outline = '2px solid #e74c3c';
+            setTimeout(() => emailEl.style.outline = '', 1500);
+            isValid = false;
+        }
+
+        if (!text) {
+            textEl.style.outline = '2px solid #e74c3c';
+            setTimeout(() => textEl.style.outline = '', 1500);
+            isValid = false;
+        }
+
+        if (!isValid) return;
+
+        // Імітація успішної відправки
+        nameEl.value = '';
+        emailEl.value = '';
+        textEl.value = '';
+
+        successMsg.style.display = 'block';
+        
+        // Сховати повідомлення через 4 секунди
+        setTimeout(() => {
+            successMsg.style.display = 'none';
+        }, 4000);
+    });
+}
 
 // ===== ТЕМНА ТЕМА =====
 function initTheme() {
