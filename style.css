@@ -725,3 +725,7 @@ body.dark-theme .review-delete-menu button:hover {
     height: 36px;
     width: auto;
 }
+
+#basement {
+    background-color: #cfcfcf;
+}
