@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="uk">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Меню - Fast Delifood</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg sticky-top" id="navbar-settings">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html"><img src="images/fd_logo.png" alt="FD" width="50" height="50"></a>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav mx-auto">
+                        <a class="nav-link custom-link fs-4 active" href="menu.html">Меню</a>
+                        <a class="nav-link custom-link fs-4" href="index.html#feedback">Зворотній звязок</a>
+                        <a class="nav-link custom-link fs-4" href="index.html#whats-new">Новини</a>
+                        <a class="nav-link custom-link fs-4" href="index.html#about-us">Про нас</a>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center gap-3 ms-lg-auto justify-content-center mt-3 mt-lg-0">
+                    <button id="theme-toggle" class="d-flex align-items-center justify-content-center border-0 bg-transparent" title="Змінити тему"> <img id="theme-icon" src="images/панель/light_theme.png" alt="Тема"></button>
+                    <div class="navbar-basket" id="basket-container">
+                        <a class="basket-link" href="#"></a>
+                        <img id="basket-icon" src="images/панель/basket.png" alt="Кошик">
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container py-5">
+            <h1 id="titles-h3" class="text-center fw-bold mb-5">Наше Меню</h1>
+            
+            <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+                <!-- Бургери -->
+                <div class="col">
+                    <div class="menu-card border-0 rounded-4 p-3 text-center">
+                        <div class="product-image-wrapper mb-2">
+                            <img src="images/топові замовлення/burger.png" class="img-fluid" alt="Бургер">
+                        </div>
+                        <span class="fs-5 fw-bold mb-1">Класичний Бургер</span>
+                        <div class="product-price fs-5 fw-bold text-purple mb-3">145 грн</div>
+                        <button class="btn btn-purple w-100 rounded-3 mt-auto">Додати в кошик</button>
+                    </div>
+                </div>
+
+                <!-- Снеки -->
+                <div class="col">
+                    <div class="menu-card border-0 rounded-4 p-3 text-center">
+                        <div class="product-image-wrapper mb-2">
+                            <img src="images/топові замовлення/snacks.png" class="img-fluid" alt="Снеки">
+                        </div>
+                        <span class="fs-5 fw-bold mb-1">Хрусткі Снеки</span>
+                        <div class="product-price fs-5 fw-bold text-purple mb-3">85 грн</div>
+                        <button class="btn btn-purple w-100 rounded-3 mt-auto">Додати в кошик</button>
+                    </div>
+                </div>
+
+                <!-- Напої -->
+                <div class="col">
+                    <div class="menu-card border-0 rounded-4 p-3 text-center">
+                        <div class="product-image-wrapper mb-2">
+                            <img src="images/топові замовлення/drinks.png" class="img-fluid" alt="Напої">
+                        </div>
+                        <span class="fs-5 fw-bold mb-1">Освіжаючі Напої</span>
+                        <div class="product-price fs-5 fw-bold text-purple mb-3">40 грн</div>
+                        <button class="btn btn-purple w-100 rounded-3 mt-auto">Додати в кошик</button>
+                    </div>
+                </div>
+
+                <!-- Фастфуд -->
+                <div class="col">
+                    <div class="menu-card border-0 rounded-4 p-3 text-center">
+                        <div class="product-image-wrapper mb-2">
+                            <img src="images/топові замовлення/fastfood.png" class="img-fluid" alt="Фастфуд">
+                        </div>
+                        <span class="fs-5 fw-bold mb-1">Мікс Фастфуд</span>
+                        <div class="product-price fs-5 fw-bold text-purple mb-3">120 грн</div>
+                        <button class="btn btn-purple w-100 rounded-3 mt-auto">Додати в кошик</button>
+                    </div>
+                </div>
+
+                <!-- М'ясні вироби -->
+                <div class="col">
+                    <div class="menu-card border-0 rounded-4 p-3 text-center">
+                        <div class="product-image-wrapper mb-2">
+                            <img src="images/топові замовлення/meat_food.png" class="img-fluid" alt="М'ясні вироби">
+                        </div>
+                        <span class="fs-5 fw-bold mb-1">М'ясне Плато</span>
+                        <div class="product-price fs-5 fw-bold text-purple mb-3">210 грн</div>
+                        <button class="btn btn-purple w-100 rounded-3 mt-auto">Додати в кошик</button>
+                    </div>
+                </div>
+
+                <!-- Грузинська кухня -->
+                <div class="col">
+                    <div class="menu-card border-0 rounded-4 p-3 text-center">
+                        <div class="product-image-wrapper mb-2">
+                            <img src="images/топові замовлення/georgian_food.png" class="img-fluid" alt="Грузинська кухня">
+                        </div>
+                        <span class="fs-5 fw-bold mb-1">Хачапурі</span>
+                        <div class="product-price fs-5 fw-bold text-purple mb-3">160 грн</div>
+                        <button class="btn btn-purple w-100 rounded-3 mt-auto">Додати в кошик</button>
+                    </div>
+                </div>
+
+                <!-- Торти -->
+                <div class="col">
+                    <div class="menu-card border-0 rounded-4 p-3 text-center">
+                        <div class="product-image-wrapper mb-2">
+                            <img src="images/топові замовлення/cakes.png" class="img-fluid" alt="Торти">
+                        </div>
+                        <span class="fs-5 fw-bold mb-1">Шоколадний Торт</span>
+                        <div class="product-price fs-5 fw-bold text-purple mb-3">95 грн</div>
+                        <button class="btn btn-purple w-100 rounded-3 mt-auto">Додати в кошик</button>
+                    </div>
+                </div>
+
+                <!-- Десерти -->
+                <div class="col">
+                    <div class="menu-card border-0 rounded-4 p-3 text-center">
+                        <div class="product-image-wrapper mb-2">
+                            <img src="images/топові замовлення/desserts.png" class="img-fluid" alt="Десерти">
+                        </div>
+                        <span class="fs-5 fw-bold mb-1">Ніжний Десерт</span>
+                        <div class="product-price fs-5 fw-bold text-purple mb-3">75 грн</div>
+                        <button class="btn btn-purple w-100 rounded-3 mt-auto">Додати в кошик</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer id="basement" class="mt-5">
+            <div class="container py-4 d-flex flex-column flex-md-row justify-content-between align-items-center gap-4">
+                <div class="footer-logo">
+                    <a href="index.html"><img src="images/fd_logo.png" alt="Fast Delifood Logo" width="70"></a>
+                </div>
+                <div class="footer-menu d-flex flex-column text-center">
+                    <a class="footer-link fs-5 mb-2" href="menu.html">Меню</a>
+                    <a class="footer-link fs-5 mb-2" href="index.html#whats-new">Новини</a>
+                    <a class="footer-link fs-5 mb-2" href="index.html#about-us">Про нас</a>
+                    <a class="footer-link fs-5" href="index.html#feedback">Зворотній зв'язок</a>
+                </div>
+                <div class="footer-social d-flex gap-3">
+                    <a href="#"><img src="images/підвал/facebook.png" alt="Facebook" class="social-icon"></a>
+                    <a href="#"><img src="images/підвал/x.png" alt="X" class="social-icon"></a>
+                    <a href="#"><img src="images/підвал/youtube.png" alt="YouTube" class="social-icon"></a>
+                    <a href="#"><img src="images/підвал/tiktok.png" alt="TikTok" class="social-icon"></a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
