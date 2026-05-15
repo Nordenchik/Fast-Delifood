@@ -163,7 +163,7 @@ function initCartActions() {
         button.addEventListener('click', function(event) {
             event.preventDefault();
             const card = this.closest('.menu-card');
-            const titleEl = card.querySelector('span.fs-5, .fw-bold');
+            const titleEl = card.querySelector('.product-title, span.fs-5, .fw-bold');
             const priceEl = card.querySelector('.product-price');
             const imgEl = card.querySelector('img');
 
@@ -245,6 +245,161 @@ function initCart() {
     initCartActions();
     renderCart();
     updateCartBadge();
+}
+
+const MENU_CATEGORIES = [
+    {
+        key: 'all',
+        title: 'Усі',
+        items: []
+    },
+    {
+        key: 'бургери',
+        title: 'Бургери',
+        items: [
+            { id: 'cheeseburger', title: 'Чізбургер', price: 145, image: 'images/товари/бургери/cheeseburger.png', description: "Ніжне м'ясо з сиром та соусом у м'якій булочці." },
+            { id: 'double_cheeseburger', title: 'Подвійний чізбургер', price: 205, image: 'images/товари/бургери/double cheeseburger.png', description: 'Два смачні котлети та подвійна сирна насолода.' },
+            { id: 'chicken_burger', title: 'Курячий бургер', price: 155, image: 'images/товари/бургери/chicken-burger.png', description: 'Соковитий курячий стейк з овочами й ніжним соусом.' },
+            { id: 'bacon_burger', title: 'Бургер з беконом', price: 175, image: 'images/товари/бургери/bacon-burger.png', description: 'Хрусткий бекон, смачний сир та справжній бургерний смак.' },
+            { id: 'bbq_burger', title: 'BBQ бургер', price: 165, image: 'images/товари/бургери/bbq_burger.png', description: 'Пікантне барбекю з карамелізованою цибулею і соусом.' }
+        ]
+    },
+    {
+        key: 'грузинська кухня',
+        title: 'Грузинська кухня',
+        items: [
+            { id: 'khachapuri', title: 'Хачапурі', price: 165, image: 'images/товари/грузинська кухня/khachapuri.png', description: "М'який сир у хрусткій булці — соковито та ситно." },
+            { id: 'khinkali', title: 'Хінкалі', price: 155, image: 'images/товари/грузинська кухня/OIP-Photoroom (3).png', description: 'Традиційні грузинські пельмені з пряним бульйоном.' },
+            { id: 'chashushuli', title: 'Чашушулі', price: 185, image: 'images/товари/грузинська кухня/R-Photoroom.png', description: "Ніжне тушковане м'ясо в томатному соусі з травами." },
+            { id: 'georgian_salad', title: 'Грузинська страва', price: 150, image: 'images/товари/грузинська кухня/istockphoto-1291969896-170667a-Photoroom.png', description: 'Апетитне грузинське частування з пекучим смаком.' }
+        ]
+    },
+    {
+        key: 'десерти',
+        title: 'Десерти',
+        items: [
+            { id: 'ice_cream', title: 'Морозиво', price: 95, image: 'images/товари/десерти/ice_cream.png', description: 'Холодний десерт зі свіжим вершковим смаком.' }
+        ]
+    },
+    {
+        key: 'м\'ясні вироби',
+        title: 'М\'ясні вироби',
+        items: [
+            { id: 'bujenina', title: 'Буженина', price: 195, image: 'images/товари/м\'ясні вироби/bujenina.png', description: "Соковита м'ясна нарізка з ніжним ароматом спецій." },
+            { id: 'chicken_wings', title: 'Курячі крильця', price: 175, image: 'images/товари/м\'ясні вироби/chicken_wings.png', description: 'Пікантні крильця зі спеціями і хрумкою скоринкою.' },
+            { id: 'grill_sausages', title: 'Ковбаски на грилі', price: 185, image: 'images/товари/м\'ясні вироби/grill_sausages.png', description: 'Соковиті ковбаски з нотками диму та зелені.' },
+            { id: 'kebab', title: 'Шашлик', price: 205, image: 'images/товари/м\'ясні вироби/kebab.png', description: "Апетитні шматочки м'яса на шпажках з овочами." },
+            { id: 'steak', title: 'Стейк', price: 235, image: 'images/товари/м\'ясні вироби/steak.png', description: 'Ніжний стейк з правильним обсмаженням та соком.' }
+        ]
+    },
+    {
+        key: 'напої',
+        title: 'Напої',
+        items: [
+            { id: 'coca_cola', title: 'Coca-Cola', price: 65, image: 'images/товари/напої/coca_cola.png', description: 'Освіжаючий газований напій для кожного замовлення.' },
+            { id: 'fanta', title: 'Fanta', price: 65, image: 'images/товари/напої/fanta.png', description: 'Соковита апельсинова насолода з яскравим смаком.' },
+            { id: 'juice', title: 'Сік', price: 75, image: 'images/товари/напої/juice.png', description: 'Свіжий фруктовий сік, що бадьорить з першого ковтка.' },
+            { id: 'pepsi', title: 'Pepsi', price: 65, image: 'images/товари/напої/pepsi.png', description: "Класичний газований напій з м'яким смаком." },
+            { id: 'sprite', title: 'Sprite', price: 65, image: 'images/товари/напої/sprite.png', description: 'Лимонно-лаймове освіження для жарких днів.' }
+        ]
+    },
+    {
+        key: 'снеки',
+        title: 'Снеки',
+        items: [
+            { id: 'cheese_sticks', title: 'Сирні палички', price: 115, image: 'images/товари/снеки/cheese_sticks.png', description: 'Хрусткі сирні роли з тягучою начинкою.' },
+            { id: 'fries', title: 'Картопля фрі', price: 105, image: 'images/товари/снеки/fries.png', description: 'Золотава картопля з легкою солончакою посипкою.' },
+            { id: 'nachos', title: 'Начос', price: 135, image: 'images/товари/снеки/nachos.png', description: 'Чіпси з сиром, овочами та гострим соусом.' },
+            { id: 'nuggets', title: 'Нагетси', price: 135, image: 'images/товари/снеки/nuggets.png', description: 'Соковиті курячі крокети з хрусткою паніровкою.' },
+            { id: 'onion_rings', title: 'Цибулеві кільця', price: 125, image: 'images/товари/снеки/onion_rings.png', description: 'Ароматні кільця з ніжною цибулею всередині.' }
+        ]
+    },
+    {
+        key: 'торти',
+        title: 'Торти',
+        items: [
+            { id: 'cheesecake', title: 'Чізкейк', price: 145, image: 'images/товари/торти/cheesecake.png', description: 'Ніжний торт із кремовим сирним шаром.' },
+            { id: 'chocolate_cake', title: 'Шоколадний торт', price: 155, image: 'images/товари/торти/chocolate_cake.png', description: 'Шоколадний насичений десерт для справжніх гурманів.' },
+            { id: 'medovik', title: 'Медовик', price: 150, image: 'images/товари/торти/medovik.png', description: 'Солодкий медовий смак у кожному шматочку.' },
+            { id: 'napoleon', title: 'Наполеон', price: 150, image: 'images/товари/торти/napoleon.png', description: 'Слойки з ніжним кремом та хрумким смаком.' }
+        ]
+    },
+    {
+        key: 'фастфуд',
+        title: 'Фастфуд',
+        items: [
+            { id: 'hot_dog', title: 'Хот-дог', price: 125, image: 'images/товари/фастфуд/hot_dog.png', description: 'Класичний хот-дог із гірчичним смаком і соусом.' },
+            { id: 'pizza', title: 'Піца', price: 220, image: 'images/товари/фастфуд/pizza.png', description: 'Апетитна піца з сиром та ароматними ковбасками.' },
+            { id: 'sandwich', title: 'Сендвіч', price: 135, image: 'images/товари/фастфуд/sandwich.png', description: "Ситний сендвіч з овочами та м'ясом всередині." },
+            { id: 'shawarma', title: 'Шаурма', price: 165, image: 'images/товари/фастфуд/shawarma.png', description: 'Соковита шаурма з ніжною куркою та салатом.' },
+            { id: 'taco', title: 'Тако', price: 145, image: 'images/товари/фастфуд/taco.png', description: "Хрустке тако з пряною м'ясною начинкою." }
+        ]
+    }
+];
+
+function getMenuItems(categoryKey) {
+    if (categoryKey === 'all') {
+        return MENU_CATEGORIES.reduce((result, category) => {
+            if (category.key === 'all') return result;
+            return result.concat(category.items);
+        }, []);
+    }
+    const category = MENU_CATEGORIES.find(cat => cat.key === categoryKey);
+    return category ? category.items : [];
+}
+
+function renderCatalogCategories(activeKey = 'all') {
+    const wrapper = document.getElementById('catalog-categories');
+    if (!wrapper) return;
+
+    wrapper.innerHTML = MENU_CATEGORIES.map(category => `
+        <button type="button" class="btn btn-outline-purple category-tab${category.key === activeKey ? ' active' : ''}" data-category="${category.key}">${category.title}</button>
+    `).join('');
+
+    wrapper.querySelectorAll('.category-tab').forEach(tab => {
+        tab.addEventListener('click', function() {
+            const categoryKey = this.dataset.category;
+            renderCatalogItems(categoryKey);
+            wrapper.querySelectorAll('.category-tab').forEach(btn => btn.classList.toggle('active', btn.dataset.category === categoryKey));
+        });
+    });
+}
+
+function renderCatalogItems(categoryKey = 'all') {
+    const wrapper = document.getElementById('catalog-items');
+    if (!wrapper) return;
+
+    const items = getMenuItems(categoryKey);
+    if (!items.length) {
+        wrapper.innerHTML = '<div class="col"><p class="text-center">Товари не знайдено.</p></div>';
+        return;
+    }
+
+    wrapper.innerHTML = items.map(item => `
+        <div class="col">
+            <div class="menu-card rounded-4 p-3 d-flex flex-column">
+                <div class="product-image-wrapper mb-3">
+                    <img src="${item.image}" alt="${item.title}" class="img-fluid">
+                </div>
+                <div class="d-flex flex-column flex-grow-1">
+                    <h5 class="product-title mb-2">${item.title}</h5>
+                    <p class="product-price fw-semibold mb-1">${formatPrice(item.price)}</p>
+                    <p class="product-description mb-3">${item.description || 'Смачний товар з нашого меню.'}</p>
+                    <button type="button" class="btn btn-purple mt-auto" data-price="${item.price}">Додати до кошика</button>
+                </div>
+            </div>
+        </div>
+    `).join('');
+
+    initCartActions();
+}
+
+function initMenuCatalog() {
+    const hasCatalog = document.getElementById('catalog-items') && document.getElementById('catalog-categories');
+    if (!hasCatalog) return;
+
+    renderCatalogCategories('all');
+    renderCatalogItems('all');
 }
 
 // ===== ВІДГУКИ =====
@@ -508,6 +663,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initReviewSubmit();
     initLoadMore();
     initFeedbackSubmit();
+    initMenuCatalog();
     initCart();
     renderReviews();
 });
