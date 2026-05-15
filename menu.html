@@ -39,11 +39,20 @@
             <div id="cart-items" class="cart-items"></div>
             <div id="cart-empty-message" class="cart-empty-message">В кошику поки що немає товарів.</div>
             <div class="cart-summary">
-                <span>Всього:</span>
+                <span>Всього до оплати:</span>
                 <span id="cart-total">0 грн</span>
             </div>
             <button id="checkout-btn" class="btn btn-purple w-100 rounded-3">Оформити замовлення</button>
         </aside>
+
+        <div id="order-modal-overlay" class="modal-overlay" aria-hidden="true">
+            <div class="order-modal">
+                <button id="order-modal-close-btn" type="button" class="order-modal-close" aria-label="Закрити">×</button>
+                <div class="order-modal-icon">✓</div>
+                <h3>Дякуємо за замовлення!</h3>
+                <p>Менеджер зв'яжеться з вами найближчим часом.</p>
+            </div>
+        </div>
 
         <div class="container py-5">
             <h1 id="titles-h3" class="text-center fw-bold mb-5">Наше Меню</h1>
@@ -57,7 +66,7 @@
                         </div>
                         <span class="fs-5 fw-bold mb-1">Класичний Бургер</span>
                         <div class="product-price fs-5 fw-bold text-purple mb-3">145 грн</div>
-                        <button class="btn btn-purple w-100 rounded-3 mt-auto">Додати в кошик</button>
+                        <button class="btn btn-purple w-100 rounded-3 mt-auto" data-price="145">Додати в кошик</button>
                     </div>
                 </div>
 
@@ -69,7 +78,7 @@
                         </div>
                         <span class="fs-5 fw-bold mb-1">Хрусткі Снеки</span>
                         <div class="product-price fs-5 fw-bold text-purple mb-3">85 грн</div>
-                        <button class="btn btn-purple w-100 rounded-3 mt-auto">Додати в кошик</button>
+                        <button class="btn btn-purple w-100 rounded-3 mt-auto" data-price="85">Додати в кошик</button>
                     </div>
                 </div>
 
@@ -81,7 +90,7 @@
                         </div>
                         <span class="fs-5 fw-bold mb-1">Освіжаючі Напої</span>
                         <div class="product-price fs-5 fw-bold text-purple mb-3">40 грн</div>
-                        <button class="btn btn-purple w-100 rounded-3 mt-auto">Додати в кошик</button>
+                        <button class="btn btn-purple w-100 rounded-3 mt-auto" data-price="40">Додати в кошик</button>
                     </div>
                 </div>
 
@@ -93,7 +102,7 @@
                         </div>
                         <span class="fs-5 fw-bold mb-1">Мікс Фастфуд</span>
                         <div class="product-price fs-5 fw-bold text-purple mb-3">120 грн</div>
-                        <button class="btn btn-purple w-100 rounded-3 mt-auto">Додати в кошик</button>
+                        <button class="btn btn-purple w-100 rounded-3 mt-auto" data-price="120">Додати в кошик</button>
                     </div>
                 </div>
 
@@ -105,7 +114,7 @@
                         </div>
                         <span class="fs-5 fw-bold mb-1">М'ясне Плато</span>
                         <div class="product-price fs-5 fw-bold text-purple mb-3">210 грн</div>
-                        <button class="btn btn-purple w-100 rounded-3 mt-auto">Додати в кошик</button>
+                        <button class="btn btn-purple w-100 rounded-3 mt-auto" data-price="210">Додати в кошик</button>
                     </div>
                 </div>
 
@@ -117,7 +126,7 @@
                         </div>
                         <span class="fs-5 fw-bold mb-1">Хачапурі</span>
                         <div class="product-price fs-5 fw-bold text-purple mb-3">160 грн</div>
-                        <button class="btn btn-purple w-100 rounded-3 mt-auto">Додати в кошик</button>
+                        <button class="btn btn-purple w-100 rounded-3 mt-auto" data-price="160">Додати в кошик</button>
                     </div>
                 </div>
 
@@ -129,7 +138,7 @@
                         </div>
                         <span class="fs-5 fw-bold mb-1">Шоколадний Торт</span>
                         <div class="product-price fs-5 fw-bold text-purple mb-3">95 грн</div>
-                        <button class="btn btn-purple w-100 rounded-3 mt-auto">Додати в кошик</button>
+                        <button class="btn btn-purple w-100 rounded-3 mt-auto" data-price="95">Додати в кошик</button>
                     </div>
                 </div>
 
@@ -141,7 +150,7 @@
                         </div>
                         <span class="fs-5 fw-bold mb-1">Ніжний Десерт</span>
                         <div class="product-price fs-5 fw-bold text-purple mb-3">75 грн</div>
-                        <button class="btn btn-purple w-100 rounded-3 mt-auto">Додати в кошик</button>
+                        <button class="btn btn-purple w-100 rounded-3 mt-auto" data-price="75">Додати в кошик</button>
                     </div>
                 </div>
             </div>

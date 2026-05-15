@@ -71,7 +71,8 @@ function renderCart() {
             </div>
             <div class="cart-item-body">
                 <p class="cart-item-title">${item.title}</p>
-                <p class="cart-item-price">${formatPrice(item.price)} × ${item.quantity}</p>
+                <p class="cart-item-price">Ціна: ${formatPrice(item.price)}</p>
+                <p class="cart-item-total">Сума: ${formatPrice(item.price * item.quantity)}</p>
                 <div class="cart-item-controls">
                     <button type="button" class="cart-qty-btn" data-action="decrease" data-id="${item.id}">-</button>
                     <span class="cart-qty">${item.quantity}</span>
@@ -84,6 +85,18 @@ function renderCart() {
     });
 
     totalEl.textContent = formatPrice(calculateCartTotal(items));
+}
+
+function showOrderModal() {
+    const modal = document.getElementById('order-modal-overlay');
+    if (!modal) return;
+    modal.classList.add('open');
+}
+
+function hideOrderModal() {
+    const modal = document.getElementById('order-modal-overlay');
+    if (!modal) return;
+    modal.classList.remove('open');
 }
 
 function addItemToCart(product) {
@@ -150,13 +163,14 @@ function initCartActions() {
         button.addEventListener('click', function(event) {
             event.preventDefault();
             const card = this.closest('.menu-card');
-            const titleEl = card.querySelector('span.fs-5');
+            const titleEl = card.querySelector('span.fs-5, .fw-bold');
             const priceEl = card.querySelector('.product-price');
             const imgEl = card.querySelector('img');
 
             const title = titleEl ? titleEl.textContent.trim() : 'Товар';
-            const price = priceEl ? parseInt(priceEl.textContent.replace(/[^\\d]/g, '')) : 0;
-            const id = title.toLowerCase().replace(/\s+/g, '_');
+            const priceText = button.dataset.price || (priceEl ? priceEl.textContent : '0');
+            const price = parseInt(priceText.replace(/[^\d]/g, '')) || 0;
+            const id = title.toLowerCase().replace(/\s+/g, '_').replace(/[^0-9a-zа-яёєіїґ_]/gi, '');
 
             addItemToCart({
                 id,
@@ -165,7 +179,6 @@ function initCartActions() {
                 image: imgEl ? imgEl.src : '',
                 alt: imgEl ? imgEl.alt : title
             });
-            toggleCartPanel(true);
         });
     });
 
@@ -203,12 +216,28 @@ function initCartActions() {
 
     if (checkoutBtn) {
         checkoutBtn.addEventListener('click', function() {
+            const items = getCartItems();
+            if (!items.length) return;
+
             saveCartItems([]);
             renderCart();
             updateCartBadge();
             toggleCartPanel(false);
-            alert('Дякуємо! Ваше замовлення оформлено.');
+            showOrderModal();
         });
+    }
+
+    const orderModal = document.getElementById('order-modal-overlay');
+    const orderModalClose = document.getElementById('order-modal-close-btn');
+    if (orderModal) {
+        orderModal.addEventListener('click', function(event) {
+            if (event.target === orderModal) {
+                hideOrderModal();
+            }
+        });
+    }
+    if (orderModalClose) {
+        orderModalClose.addEventListener('click', hideOrderModal);
     }
 }
 
